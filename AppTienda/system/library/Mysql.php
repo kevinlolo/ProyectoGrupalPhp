@@ -37,5 +37,12 @@ class Mysql{
 			return $result;
 		}
 	}
+	public function insert($sql)
+	{
+		$rs = mysqli_query($this->cn,$sql);
+		if(!$rs){
+			echo "La insercion Fallo: ".mysql_errno($this->cn);
+		}
+	}
 }
 ?>
